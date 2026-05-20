@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>IRL by Instawork — Earn From Your Workplace</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"/>
 <style>
   :root {
     --blue-dark: #042C53;
@@ -25,512 +25,348 @@
     --radius: 14px;
     --radius-sm: 8px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--white);
     color: var(--text);
     overflow-x: hidden;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-
-  h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
-
+  h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.01em; }
+  h4, h5, h6, button, .btn-primary, .btn-ghost, .nav-logo, .section-tag { font-family: 'Inter', sans-serif; }
+ 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--gray-light);
-    padding: 0 2rem;
-    height: 64px;
+    padding: 0 2.5rem;
+    height: 66px;
     display: flex; align-items: center; justify-content: space-between;
   }
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800; font-size: 1.1rem;
+    font-weight: 800; font-size: 1.05rem;
     color: var(--blue-dark);
     display: flex; align-items: center; gap: 8px;
+    letter-spacing: -0.02em;
   }
   .nav-logo span {
     background: var(--blue);
     color: white;
-    padding: 2px 8px;
+    padding: 3px 9px;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 700;
   }
-  .nav-links {
-    display: flex; gap: 1.5rem; list-style: none;
-  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     text-decoration: none; color: var(--gray);
-    font-size: 0.9rem; font-weight: 500;
-    transition: color 0.2s;
+    font-size: 0.875rem; font-weight: 500;
+    transition: color 0.2s; letter-spacing: 0.01em;
   }
   .nav-links a:hover { color: var(--blue); }
   .nav-cta {
-    background: var(--blue);
-    color: white !important;
-    padding: 8px 18px;
-    border-radius: 8px;
-    font-size: 0.85rem !important;
+    background: var(--blue); color: white !important;
+    padding: 9px 20px; border-radius: 8px;
+    font-size: 0.85rem !important; font-weight: 600 !important;
     transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: var(--blue-mid) !important; color: white !important; }
-
+  .nav-cta:hover { background: var(--blue-mid) !important; }
+ 
   /* HERO */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 50%, var(--blue) 100%);
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 55%, var(--blue) 100%);
     display: flex; align-items: center;
-    padding: 100px 2rem 4rem;
-    position: relative;
-    overflow: hidden;
+    padding: 110px 2.5rem 5rem;
+    position: relative; overflow: hidden;
   }
   .hero::before {
-    content: '';
-    position: absolute; top: -40%; right: -10%;
-    width: 700px; height: 700px;
-    border-radius: 50%;
-    background: rgba(55,138,221,0.18);
+    content: ''; position: absolute; top: -35%; right: -8%;
+    width: 650px; height: 650px; border-radius: 50%;
+    background: rgba(55,138,221,0.15);
   }
   .hero::after {
-    content: '';
-    position: absolute; bottom: -20%; left: -5%;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: rgba(181,212,244,0.1);
+    content: ''; position: absolute; bottom: -15%; left: -3%;
+    width: 380px; height: 380px; border-radius: 50%;
+    background: rgba(181,212,244,0.08);
   }
   .hero-inner {
-    max-width: 760px; margin: 0 auto; width: 100%;
-    display: flex; flex-direction: column; align-items: flex-start;
+    max-width: 800px; margin: 0 auto; width: 100%;
     position: relative; z-index: 1;
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 999px;
-    padding: 6px 16px;
-    font-size: 0.8rem; color: var(--blue-pale);
-    margin-bottom: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px; padding: 6px 18px;
+    font-size: 0.78rem; font-weight: 500; color: var(--blue-pale);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 1.8rem;
   }
   .hero-badge::before {
-    content: ''; width: 8px; height: 8px;
+    content: ''; width: 7px; height: 7px;
     background: #4ADE80; border-radius: 50%;
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
   .hero h1 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 800; color: white;
-    line-height: 1.1; margin-bottom: 1.2rem;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 900; color: white;
+    line-height: 1.08; margin-bottom: 1rem;
   }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--amber);
+  .hero h1 em { font-style: normal; color: var(--amber); }
+  .hero-refer-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(250,199,117,0.12);
+    border: 1px solid rgba(250,199,117,0.35);
+    border-radius: 999px; padding: 8px 20px;
+    margin: 1.2rem 0 1.5rem;
+  }
+  .hero-refer-pill p {
+    color: var(--amber); font-size: 0.92rem; font-weight: 600; margin: 0;
   }
   .hero-sub {
-    color: var(--blue-pale); font-size: 1.05rem; line-height: 1.7;
-    margin-bottom: 2rem;
+    color: rgba(181,212,244,0.9); font-size: 1rem; line-height: 1.75;
+    margin-bottom: 2.2rem; font-weight: 400; max-width: 620px;
   }
-  .hero-actions {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
-    background: var(--amber);
-    color: var(--amber-dark);
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700; font-size: 0.95rem;
-    text-decoration: none;
-    border: none; cursor: pointer;
+    background: var(--amber); color: var(--amber-dark);
+    padding: 13px 28px; border-radius: 10px;
+    font-weight: 700; font-size: 0.92rem;
+    text-decoration: none; border: none; cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    display: inline-block;
+    display: inline-block; letter-spacing: 0.01em;
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(250,199,117,0.4); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(250,199,117,0.38); }
   .btn-ghost {
-    background: rgba(255,255,255,0.1);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 600; font-size: 0.95rem;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
-    transition: background 0.2s;
-    display: inline-block;
+    background: rgba(255,255,255,0.08); color: white;
+    padding: 13px 28px; border-radius: 10px;
+    font-weight: 600; font-size: 0.92rem;
+    text-decoration: none; border: 1px solid rgba(255,255,255,0.22);
+    cursor: pointer; transition: background 0.2s; display: inline-block;
   }
-  .btn-ghost:hover { background: rgba(255,255,255,0.18); }
-
-
-
-  /* SECTION COMMONS */
-  section { padding: 5rem 2rem; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+ 
+  /* SECTIONS */
+  section { padding: 5.5rem 2.5rem; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-tag {
-    font-size: 0.75rem; font-weight: 700; color: var(--blue);
-    text-transform: uppercase; letter-spacing: 0.12em;
-    margin-bottom: 0.8rem;
+    font-size: 0.72rem; font-weight: 700; color: var(--blue);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
   }
   .section-title {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
     font-weight: 800; color: var(--blue-dark);
-    line-height: 1.2; margin-bottom: 1rem;
+    line-height: 1.15; margin-bottom: 1rem;
   }
   .section-sub {
-    font-size: 1rem; color: var(--gray);
-    line-height: 1.7; max-width: 560px;
+    font-size: 0.97rem; color: var(--gray);
+    line-height: 1.75; max-width: 560px; font-weight: 400;
   }
-
+ 
   /* HOW IT WORKS */
   .how-bg { background: var(--off-white); }
-  .steps {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-    margin-top: 3rem;
-  }
+  .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; margin-top: 3rem; }
   .step {
     background: white; border-radius: var(--radius);
     padding: 2rem; border: 1px solid var(--gray-light);
-    position: relative;
+    position: relative; transition: box-shadow 0.2s;
   }
+  .step:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
   .step-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 3rem; font-weight: 800;
-    color: var(--blue-ghost);
-    position: absolute; top: 1rem; right: 1.2rem;
-    line-height: 1;
+    font-size: 3.2rem; font-weight: 900; font-family: 'Inter', sans-serif;
+    color: var(--blue-ghost); position: absolute; top: 1rem; right: 1.2rem; line-height: 1;
   }
   .step-icon {
-    width: 48px; height: 48px;
-    background: var(--blue-ghost);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
+    width: 48px; height: 48px; background: var(--blue-ghost);
+    border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; margin-bottom: 1.2rem; font-size: 1.4rem;
   }
-  .step h3 {
-    font-size: 1.05rem; font-weight: 700; color: var(--blue-dark);
-    margin-bottom: 0.5rem;
-  }
-  .step p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
-
-  /* WHY SECTION */
-  .why-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    margin-top: 3rem; align-items: start;
-  }
+  .step h3 { font-size: 1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+  .step p { font-size: 0.875rem; color: var(--gray); line-height: 1.65; }
+ 
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; align-items: start; }
   .why-cards { display: flex; flex-direction: column; gap: 1rem; }
   .why-card {
     background: white; border: 1px solid var(--gray-light);
     border-radius: var(--radius); padding: 1.4rem 1.6rem;
     display: flex; gap: 1rem; align-items: flex-start;
+    transition: box-shadow 0.2s;
   }
+  .why-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
   .why-icon {
     width: 44px; height: 44px; flex-shrink: 0;
-    background: var(--blue-ghost);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
+    background: var(--blue-ghost); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
   }
-  .why-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; }
-  .why-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+  .why-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+  .why-card p { font-size: 0.845rem; color: var(--gray); line-height: 1.65; }
   .trust-box {
-    background: var(--blue-ghost);
-    border: 1px solid var(--blue-pale);
-    border-radius: var(--radius);
-    padding: 2rem;
+    background: var(--blue-ghost); border: 1px solid var(--blue-pale);
+    border-radius: var(--radius); padding: 2rem;
   }
-  .trust-box h3 {
-    font-size: 1.1rem; font-weight: 700; color: var(--blue-dark);
-    margin-bottom: 1.2rem;
-  }
-  .trust-item {
-    display: flex; gap: 10px; align-items: flex-start;
-    margin-bottom: 1rem;
-  }
+  .trust-box h3 { font-size: 1.05rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 1.3rem; font-family: 'Inter', sans-serif; }
+  .trust-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 1rem; }
   .trust-check {
     width: 22px; height: 22px; flex-shrink: 0;
     background: var(--blue); border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 0.7rem; margin-top: 1px;
+    color: white; font-size: 0.68rem; margin-top: 1px; font-weight: 700;
   }
-  .trust-item p { font-size: 0.88rem; color: var(--blue-mid); line-height: 1.5; }
+  .trust-item p { font-size: 0.865rem; color: var(--blue-mid); line-height: 1.6; }
   .trust-item strong { color: var(--blue-dark); }
-
+ 
   /* VIDEOS */
   .videos-bg { background: var(--blue-dark); }
   .videos-bg .section-tag { color: var(--blue-pale); }
   .videos-bg .section-title { color: white; }
-  .videos-bg .section-sub { color: var(--blue-pale); }
-  .lang-tabs {
-    display: flex; gap: 8px; margin: 2rem 0 1.5rem;
-  }
+  .videos-bg .section-sub { color: rgba(181,212,244,0.85); }
+  .lang-tabs { display: flex; gap: 8px; margin: 2rem 0 1.5rem; }
   .lang-tab {
-    padding: 8px 20px; border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 22px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
     background: transparent; color: var(--blue-pale);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem; cursor: pointer;
-    transition: all 0.2s;
+    font-size: 0.87rem; font-weight: 500; cursor: pointer;
+    transition: all 0.2s; font-family: 'Inter', sans-serif;
   }
-  .lang-tab.active {
-    background: var(--blue); color: white; border-color: var(--blue);
-  }
+  .lang-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
   .video-placeholder {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius);
-    aspect-ratio: 16/9;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius); aspect-ratio: 16/9;
     display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 1rem;
-    max-width: 720px;
+    align-items: center; justify-content: center; gap: 1rem; max-width: 720px;
   }
   .play-btn {
-    width: 72px; height: 72px;
-    background: var(--blue);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem; cursor: pointer;
-    transition: transform 0.2s;
+    width: 72px; height: 72px; background: var(--blue);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; cursor: pointer; transition: transform 0.2s;
   }
   .play-btn:hover { transform: scale(1.08); }
-  .video-label { color: var(--blue-pale); font-size: 0.9rem; }
-  .video-caption {
-    font-size: 0.8rem; color: rgba(255,255,255,0.4);
-    margin-top: 0.8rem; font-style: italic;
-  }
-
+  .video-label { color: var(--blue-pale); font-size: 0.9rem; font-weight: 500; }
+  .video-caption { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.8rem; font-style: italic; }
+ 
   /* REFERRAL */
   .ref-bg { background: var(--purple-pale); }
-  .ref-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    margin-top: 3rem; align-items: center;
-  }
-  .ref-cards {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-  }
+  .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: center; }
+  .ref-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .ref-card {
     background: white; border: 1px solid #DDD8F8;
-    border-radius: var(--radius); padding: 1.2rem;
-    text-align: center;
+    border-radius: var(--radius); padding: 1.2rem; text-align: center;
   }
-  .ref-card .ref-n { font-size: 0.75rem; color: var(--purple); margin-bottom: 4px; }
-  .ref-card .ref-amt {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.5rem; font-weight: 800; color: var(--purple);
-  }
-  .ref-card.highlight {
-    background: var(--purple); border-color: var(--purple);
-  }
+  .ref-card .ref-n { font-size: 0.75rem; color: var(--purple); margin-bottom: 4px; font-weight: 500; }
+  .ref-card .ref-amt { font-size: 1.5rem; font-weight: 800; color: var(--purple); font-family: 'Inter', sans-serif; }
+  .ref-card.highlight { background: var(--purple); border-color: var(--purple); }
   .ref-card.highlight .ref-n { color: #DDD8F8; }
   .ref-card.highlight .ref-amt { color: white; }
   .ref-condition {
     background: white; border: 1px solid #DDD8F8;
-    border-radius: var(--radius-sm); padding: 1rem 1.2rem;
-    margin-top: 1rem;
-    font-size: 0.83rem; color: var(--purple);
-    line-height: 1.5;
+    border-radius: var(--radius-sm); padding: 1rem 1.2rem; margin-top: 1rem;
+    font-size: 0.83rem; color: var(--purple); line-height: 1.55;
   }
   .ref-condition strong { color: var(--blue-dark); }
-
-  /* 3 WAYS */
-  .ways-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    margin-top: 3rem;
-  }
-  .way-card {
-    border-radius: var(--radius);
-    padding: 2rem;
-    display: flex; flex-direction: column;
-    border: 1px solid var(--gray-light);
-  }
-  .way-card.business { background: var(--blue-ghost); border-color: var(--blue-pale); }
-  .way-card.refer { background: var(--purple-pale); border-color: #DDD8F8; }
-  .way-card.join { background: #FFF8EE; border-color: #F5C4B3; }
-  .way-card-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .way-card h3 { font-size: 1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 0.5rem; }
-  .way-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex: 1; margin-bottom: 1.2rem; }
-  .btn-way {
-    display: inline-block; text-decoration: none;
-    padding: 10px 20px; border-radius: 8px;
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
-    text-align: center; transition: all 0.2s; cursor: pointer; border: none;
-  }
-  .btn-way.blue { background: var(--blue); color: white; }
-  .btn-way.blue:hover { background: var(--blue-mid); }
-  .btn-way.purple { background: var(--purple); color: white; }
-  .btn-way.purple:hover { background: #3C3489; }
-  .btn-way.orange { background: #D85A30; color: white; }
-  .btn-way.orange:hover { background: #993C1D; }
-
-  /* FORMS SECTION */
-  .forms-section { background: var(--off-white); }
-  .form-tabs {
-    display: flex; gap: 8px; margin: 2rem 0;
-    flex-wrap: wrap;
-  }
-  .form-tab {
-    padding: 10px 24px; border-radius: 10px;
-    border: 1.5px solid var(--gray-light);
-    background: white; color: var(--gray);
-    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.88rem;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .form-tab.active {
-    background: var(--blue); color: white; border-color: var(--blue);
-  }
-  .form-panel { display: none; }
-  .form-panel.active { display: block; }
-  .form-card {
+ 
+  /* GET STARTED — 3 CARDS */
+  .get-started-bg { background: var(--off-white); }
+  .gs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; margin-top: 3rem; }
+  .gs-card {
     background: white; border: 1px solid var(--gray-light);
-    border-radius: var(--radius); padding: 2.5rem;
-    max-width: 680px;
+    border-radius: var(--radius); padding: 2.2rem;
+    display: flex; flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
-  .form-card h3 {
-    font-size: 1.3rem; font-weight: 800; color: var(--blue-dark);
-    margin-bottom: 0.4rem;
+  .gs-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .gs-card.business { border-top: 4px solid var(--blue); }
+  .gs-card.refer { border-top: 4px solid var(--purple); }
+  .gs-card.join { border-top: 4px solid #D85A30; }
+  .gs-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+  .gs-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 0.6rem; font-family: 'Inter', sans-serif; }
+  .gs-card p { font-size: 0.875rem; color: var(--gray); line-height: 1.7; flex: 1; margin-bottom: 1.5rem; }
+  .gs-note { font-size: 0.78rem; color: var(--gray); margin-bottom: 1rem; font-style: italic; }
+  .btn-gs {
+    display: inline-block; text-decoration: none;
+    padding: 11px 22px; border-radius: 9px;
+    font-weight: 700; font-size: 0.88rem;
+    text-align: center; transition: all 0.2s;
+    cursor: pointer; border: none; letter-spacing: 0.01em;
   }
-  .form-card .form-desc {
-    font-size: 0.88rem; color: var(--gray); margin-bottom: 2rem;
-    line-height: 1.6;
+  .btn-gs.blue { background: var(--blue); color: white; }
+  .btn-gs.blue:hover { background: var(--blue-mid); }
+  .btn-gs.purple { background: var(--purple); color: white; }
+  .btn-gs.purple:hover { background: #3C3489; }
+  .btn-gs.orange { background: #D85A30; color: white; }
+  .btn-gs.orange:hover { background: #993C1D; }
+ 
+  /* FAQ */
+  .faq-list { margin-top: 2.5rem; max-width: 720px; }
+  .faq-item { border-bottom: 1px solid var(--gray-light); padding: 1.3rem 0; }
+  .faq-q {
+    font-size: 0.95rem; font-weight: 600; color: var(--blue-dark);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    font-family: 'Inter', sans-serif;
   }
-  .form-row { margin-bottom: 1.2rem; }
-  .form-row label {
-    display: block; font-size: 0.82rem; font-weight: 600;
-    color: var(--blue-dark); margin-bottom: 6px;
-  }
-  .form-row input, .form-row select, .form-row textarea {
-    width: 100%; padding: 12px 14px;
-    border: 1.5px solid var(--gray-light);
-    border-radius: 8px; font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem; color: var(--text);
-    background: white; outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-    border-color: var(--blue);
-  }
-  .form-row textarea { min-height: 90px; resize: vertical; }
-  .form-2col {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  }
-  .form-submit {
-    width: 100%; padding: 14px;
-    background: var(--blue); color: white;
-    border: none; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
-    cursor: pointer; margin-top: 0.5rem;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .form-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
-  .form-note {
-    font-size: 0.78rem; color: var(--gray); text-align: center;
-    margin-top: 1rem; line-height: 1.5;
-  }
-  .privacy-badge {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--blue-ghost); border-radius: 8px;
-    padding: 10px 14px; margin-top: 1rem;
-    font-size: 0.8rem; color: var(--blue-mid);
-  }
-  .required { color: #E24B4A; }
-
-  /* SUCCESS */
-  .success-msg {
-    display: none;
-    background: #EAF3DE; border: 1px solid #C0DD97;
-    border-radius: 10px; padding: 1.5rem;
-    text-align: center; margin-top: 1rem;
-  }
-  .success-msg h4 { font-size: 1rem; font-weight: 700; color: #3B6D11; margin-bottom: 4px; }
-  .success-msg p { font-size: 0.85rem; color: #639922; }
-
+  .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--blue); flex-shrink: 0; font-weight: 400; }
+  .faq-q.open::after { content: '−'; }
+  .faq-a { font-size: 0.875rem; color: var(--gray); line-height: 1.75; margin-top: 0.8rem; display: none; }
+  .faq-a.show { display: block; }
+ 
   /* COMPANY */
   .company-bg { background: var(--blue-dark); }
   .company-bg .section-title { color: white; }
   .company-bg .section-tag { color: var(--blue-pale); }
-  .company-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    margin-top: 3rem; align-items: start;
-  }
-  .company-text p { color: var(--blue-pale); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+  .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: start; }
+  .company-text p { color: rgba(181,212,244,0.85); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1rem; }
   .investor-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
   .chip {
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
     border-radius: 999px; padding: 5px 14px;
-    font-size: 0.8rem; color: var(--blue-pale);
+    font-size: 0.78rem; color: var(--blue-pale); font-weight: 500;
   }
   .office-card {
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius); padding: 1.8rem;
   }
-  .office-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--blue-pale); margin-bottom: 1rem; }
-  .office-row {
-    display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px;
-  }
+  .office-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--blue-pale); margin-bottom: 1.2rem; font-family: 'Inter', sans-serif; }
+  .office-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
   .office-row-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
-  .office-row p { font-size: 0.88rem; color: var(--blue-pale); line-height: 1.5; }
+  .office-row p { font-size: 0.875rem; color: var(--blue-pale); line-height: 1.6; }
   .office-row strong { color: white; }
-
-  /* FAQ */
-  .faq-list { margin-top: 2.5rem; max-width: 720px; }
-  .faq-item {
-    border-bottom: 1px solid var(--gray-light); padding: 1.2rem 0;
-  }
-  .faq-q {
-    font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
-    color: var(--blue-dark); cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 1rem;
-  }
-  .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--blue); flex-shrink: 0; }
-  .faq-q.open::after { content: '−'; }
-  .faq-a {
-    font-size: 0.88rem; color: var(--gray); line-height: 1.7;
-    margin-top: 0.8rem; display: none;
-  }
-  .faq-a.show { display: block; }
-
+ 
   /* FOOTER */
   footer {
-    background: var(--blue-dark); padding: 2.5rem 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: var(--blue-dark); padding: 2.5rem 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
   .footer-inner {
     max-width: 1100px; margin: 0 auto;
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 1rem;
   }
-  .footer-logo {
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    color: white; font-size: 1rem;
-  }
-  .footer-note { font-size: 0.8rem; color: var(--blue-pale); }
+  .footer-logo { font-weight: 800; color: white; font-size: 0.98rem; letter-spacing: -0.01em; }
+  .footer-note { font-size: 0.78rem; color: var(--blue-pale); }
   .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { font-size: 0.82rem; color: var(--blue-pale); text-decoration: none; }
+  .footer-links a { font-size: 0.82rem; color: var(--blue-pale); text-decoration: none; font-weight: 500; }
   .footer-links a:hover { color: white; }
-
-  /* RESPONSIVE */
+ 
   @media (max-width: 768px) {
-    .hero-inner, .why-grid, .ref-grid, .ways-grid, .company-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .form-2col { grid-template-columns: 1fr; }
+    .why-grid, .ref-grid, .company-grid { grid-template-columns: 1fr; }
+    .steps, .gs-grid { grid-template-columns: 1fr; }
     nav .nav-links { display: none; }
     .ref-cards { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-logo"><span>IRL</span> by Instawork</div>
@@ -539,28 +375,26 @@
     <li><a href="#videos">Watch</a></li>
     <li><a href="#refer">Refer</a></li>
     <li><a href="#company">About</a></li>
-    <li><a href="#forms" class="nav-cta">Register Now</a></li>
+    <li><a href="#getstarted" class="nav-cta">Get Started</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-inner" style="grid-template-columns: 1fr; max-width: 780px;">
-    <div>
-      <div class="hero-badge">Now active in Bengaluru</div>
-      <h1>Your workplace earns you <em>₹1 Lakh</em> a week.</h1>
-      <div style="display:inline-block; background: rgba(250,199,117,0.15); border: 1px solid rgba(250,199,117,0.4); border-radius: 999px; padding: 8px 20px; margin: 1rem 0 1.2rem;">
-        <p style="color: var(--amber); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin: 0;">🔗 Don't have a business? No worries — Refer &amp; Earn!</p>
-      </div>
-      <p class="hero-sub">Let your team do their normal job. We place a small device on their wrist — they record, you earn. No disruption. No risk. 100% legal.</p>
-      <div class="hero-actions">
-        <a href="#forms" class="btn-primary">Register Your Business</a>
-        <a href="#refer" class="btn-ghost">Refer &amp; Earn →</a>
-      </div>
+  <div class="hero-inner">
+    <div class="hero-badge">Now active in Bengaluru</div>
+    <h1>Your workplace earns<br>you <em>₹1 Lakh</em> a week.</h1>
+    <div class="hero-refer-pill">
+      <p>🔗 Don't have a business? No worries — Refer &amp; Earn!</p>
+    </div>
+    <p class="hero-sub">Let your team do their normal job. We place a small device — they record hand movements, you earn. No disruption. No risk. 100% legal.</p>
+    <div class="hero-actions">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUXnKuFjQ9KENYVYxwi9uvlHcXfZMO-IW0QqFWMPdACwz6xA/viewform?usp=sharing&ouid=110781985776435899237" target="_blank" class="btn-primary">Register Your Business</a>
+      <a href="#refer" class="btn-ghost">Refer &amp; Earn →</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- HOW IT WORKS -->
 <section class="how-bg" id="how">
   <div class="section-inner">
@@ -572,24 +406,24 @@
         <div class="step-num">01</div>
         <div class="step-icon">🤝</div>
         <h3>We visit your business</h3>
-        <p>Our team comes to you, explains everything, and signs an agreement. You ask questions, we answer — no pressure.</p>
+        <p>Our team comes to you, explains everything in detail. You ask questions, we answer — no pressure, no rush.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-icon">📱</div>
         <h3>Workers wear a small device</h3>
-        <p>Your workers wear a phone that records hand movements only — no faces, no voices, no identity. They continue their normal work undisturbed.</p>
+        <p>Your workers wear a small device that records hand movements only — no faces, no voices, no identity. They continue their normal work completely undisturbed.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-icon">💰</div>
         <h3>You get paid directly</h3>
-        <p>Based on recording hours, payment is transferred directly to your account within 2–3 days. More hours = more earnings.</p>
+        <p>Based on recording hours, payment is transferred directly to your account. More hours = more earnings. Simple.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY -->
 <section id="why">
   <div class="section-inner">
@@ -597,27 +431,27 @@
       <div>
         <div class="section-tag">Our purpose</div>
         <h2 class="section-title">Why are we doing this?</h2>
-        <p class="section-sub">We're helping build the future of robotics — and we're paying real Bengaluru businesses to help us do it.</p>
+        <p class="section-sub">We're helping build the future of robotics — and we're paying real Bengaluru businesses to make it happen.</p>
         <div class="why-cards" style="margin-top:2rem;">
           <div class="why-card">
             <div class="why-icon">🤖</div>
             <div>
-              <h4>Training AI & Robots</h4>
+              <h4>Training AI &amp; Robots</h4>
               <p>Researchers need real-world human movement data to teach robots how to work in kitchens, warehouses, and workshops. Your team's daily work is exactly what they need.</p>
             </div>
           </div>
           <div class="why-card">
             <div class="why-icon">🌍</div>
             <div>
-              <h4>Global robotics research</h4>
+              <h4>Global Robotics Research</h4>
               <p>This data goes to world-leading robotics labs. UC Berkeley researchers identified a "100,000-year data gap" — your workplace helps close it.</p>
             </div>
           </div>
           <div class="why-card">
             <div class="why-icon">🏢</div>
             <div>
-              <h4>Backed by top investors</h4>
-              <p>Instawork is backed by Benchmark, Y Combinator, Greylock, Spark Capital, and Craft Ventures — this is a serious, well-funded program.</p>
+              <h4>Backed by Top Investors</h4>
+              <p>Instawork is backed by Benchmark, Y Combinator, Greylock, Spark Capital, and Craft Ventures — a serious, well-funded global program.</p>
             </div>
           </div>
         </div>
@@ -634,24 +468,20 @@
         </div>
         <div class="trust-item">
           <div class="trust-check">✓</div>
-          <p><strong>100% legal</strong> — a formal agreement is signed before any recording begins. You have full control.</p>
+          <p><strong>100% legal</strong> — fully compliant with all applicable laws. You have complete control.</p>
         </div>
         <div class="trust-item">
           <div class="trust-check">✓</div>
           <p><strong>No disruption to operations</strong> — workers continue their exact same job. The device is small and unobtrusive.</p>
         </div>
-        <div class="trust-item">
-          <div class="trust-check">✓</div>
-          <p><strong>Short duration</strong> — recording is typically done within 2–3 days per business. We come, record, and leave.</p>
-        </div>
         <div style="background:var(--blue);border-radius:10px;padding:1rem 1.2rem;margin-top:1.2rem;">
-          <p style="font-size:0.85rem;color:white;line-height:1.6;">"We only record what hands do — not who those hands belong to."</p>
+          <p style="font-size:0.85rem;color:white;line-height:1.65;font-weight:400;">"We only record what hands do — not who those hands belong to."</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- VIDEOS -->
 <section class="videos-bg" id="videos">
   <div class="section-inner">
@@ -686,35 +516,35 @@
     </div>
   </div>
 </section>
-
-<!-- REFER -->
+ 
+<!-- REFERRAL -->
 <section class="ref-bg" id="refer">
   <div class="section-inner">
     <div class="ref-grid">
       <div>
         <div class="section-tag">Referral program</div>
         <h2 class="section-title">Don't have a business?<br>Still earn.</h2>
-        <p class="section-sub">Know a shop, restaurant, warehouse, or any workplace? Just refer them — and earn cash the moment they start recording.</p>
-        <p style="margin-top:1.2rem;font-size:0.88rem;color:#534AB7;line-height:1.7;">The more businesses you refer, the more you earn per referral. There's no cap — keep referring, keep earning.</p>
-        <a href="#forms" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Refer a Business →</a>
+        <p class="section-sub">Know a shop, restaurant, warehouse, or any workplace? Just refer them — and earn cash the moment they qualify.</p>
+        <p style="margin-top:1.2rem;font-size:0.875rem;color:#534AB7;line-height:1.75;font-weight:400;">The more businesses you refer, the more you earn per referral. There is no cap — keep referring, keep earning.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1M8Pr47vZShjA2JJSUWmDUhsj7sdwxNzQCMYbZ0Qh8nAmXg/viewform?usp=dialog" target="_blank" class="btn-primary" style="margin-top:1.8rem;display:inline-block;">Refer a Business →</a>
       </div>
       <div>
         <div class="ref-cards">
           <div class="ref-card">
             <div class="ref-n">1st referral</div>
-            <div class="ref-amt">₹500</div>
+            <div class="ref-amt">₹300</div>
           </div>
           <div class="ref-card">
             <div class="ref-n">2nd referral</div>
-            <div class="ref-amt">₹600</div>
+            <div class="ref-amt">₹400</div>
           </div>
           <div class="ref-card">
             <div class="ref-n">3rd referral</div>
-            <div class="ref-amt">₹700</div>
+            <div class="ref-amt">₹500</div>
           </div>
           <div class="ref-card">
             <div class="ref-n">4th referral</div>
-            <div class="ref-amt">₹800</div>
+            <div class="ref-amt">₹750</div>
           </div>
           <div class="ref-card highlight">
             <div class="ref-n">5th referral</div>
@@ -722,262 +552,56 @@
           </div>
           <div class="ref-card highlight">
             <div class="ref-n">6th+ referral</div>
-            <div class="ref-amt">₹1,200+</div>
+            <div class="ref-amt">₹1,000+</div>
           </div>
         </div>
         <div class="ref-condition">
-          <strong>Condition for valid referral:</strong> The referred business must record for a minimum of 2 full days with at least 3 workers. Payment is immediate once confirmed.
+          <strong>Condition for valid referral:</strong> The referred business must record for a minimum of one full week with at least 3 workers. Bonus is paid immediately once confirmed.
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- 3 WAYS -->
-<section id="ways">
-  <div class="section-inner">
-    <div class="section-tag">3 ways to participate</div>
-    <h2 class="section-title">Choose how you want to earn</h2>
-    <p class="section-sub">Whether you own a business, know one, or want to work with us — there's a path for you.</p>
-    <div class="ways-grid">
-      <div class="way-card business">
-        <div class="way-card-icon">🏪</div>
-        <h3>Register your business</h3>
-        <p>You own or manage a shop, kitchen, warehouse, construction site, or any commercial space. Earn ₹30,000–₹1 Lakh per week just by letting your team work normally.</p>
-        <a href="#forms" class="btn-way blue" onclick="openForm('business')">Register Business</a>
-      </div>
-      <div class="way-card refer">
-        <div class="way-card-icon">🔗</div>
-        <h3>Refer a business</h3>
-        <p>You don't need your own business. Just know one? Connect them with us and earn ₹500 to ₹1,200+ per successful referral — with no upper limit.</p>
-        <a href="#forms" class="btn-way purple" onclick="openForm('refer')">Start Referring</a>
-      </div>
-      <div class="way-card join">
-        <div class="way-card-icon">💼</div>
-        <h3>Work with us</h3>
-        <p>Interested in joining as a Data Captain or Field Officer? These are paid roles with strong earning potential. Click to learn more and apply.</p>
-        <a href="#forms" class="btn-way orange" onclick="openForm('join')">Apply Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMS -->
-<section class="forms-section" id="forms">
+ 
+<!-- GET STARTED -->
+<section class="get-started-bg" id="getstarted">
   <div class="section-inner">
     <div class="section-tag">Get started</div>
-    <h2 class="section-title">Fill the form · We'll call you</h2>
-    <p class="section-sub">No phone calls needed from your side. Just submit your details — our team will reach you within 24 hours.</p>
-
-    <div class="form-tabs">
-      <button class="form-tab active" onclick="switchForm('business',this)">🏪 Business Registration</button>
-      <button class="form-tab" onclick="switchForm('refer',this)">🔗 Refer a Business</button>
-      <button class="form-tab" onclick="switchForm('join',this)">💼 Work With Us</button>
-    </div>
-
-    <!-- FORM 1: BUSINESS -->
-    <div class="form-panel active" id="panel-business">
-      <div class="form-card">
+    <h2 class="section-title">Choose how you want to earn</h2>
+    <p class="section-sub">Whether you own a business, know one, or want to work with us — there's a path for you.</p>
+    <div class="gs-grid">
+ 
+      <!-- BUSINESS -->
+      <div class="gs-card business">
+        <div class="gs-icon">🏪</div>
         <h3>Business Registration</h3>
-        <p class="form-desc">Fill this form if you own or manage a business and want to participate in the IRL recording program. We'll call you within 24 hours to discuss further.</p>
-        <div class="form-row">
-          <label>Business Name <span class="required">*</span></label>
-          <input type="text" placeholder="e.g. Lakshmi Kitchen, Sri Ganesh Garage"/>
-        </div>
-        <div class="form-2col">
-          <div class="form-row">
-            <label>Owner / Manager Name <span class="required">*</span></label>
-            <input type="text" placeholder="Your full name"/>
-          </div>
-          <div class="form-row">
-            <label>WhatsApp Number <span class="required">*</span></label>
-            <input type="tel" placeholder="+91 98765 43210"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>Business Category <span class="required">*</span></label>
-          <select>
-            <option value="">Select category</option>
-            <option>Kitchen / Restaurant / Hotel</option>
-            <option>Construction / Labour work</option>
-            <option>Automobile / Mechanic / Garage</option>
-            <option>Tailoring / Garments</option>
-            <option>Retail / Kirana store</option>
-            <option>Warehouse / Logistics</option>
-            <option>Pharmacy / Medical shop</option>
-            <option>Agriculture / Farm</option>
-            <option>Bakery / Food production</option>
-            <option>Laundry / Dry cleaning</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>Business Location / Area <span class="required">*</span></label>
-          <input type="text" placeholder="e.g. Koramangala, Bengaluru"/>
-        </div>
-        <div class="form-2col">
-          <div class="form-row">
-            <label>Number of Workers Who Can Record <span class="required">*</span></label>
-            <input type="number" placeholder="e.g. 5" min="1"/>
-          </div>
-          <div class="form-row">
-            <label>Best Time to Call</label>
-            <select>
-              <option>Morning (9am–12pm)</option>
-              <option>Afternoon (12pm–3pm)</option>
-              <option>Evening (5pm–8pm)</option>
-              <option>Any time</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>Any questions or comments?</label>
-          <textarea placeholder="Optional — anything you want to ask or tell us"></textarea>
-        </div>
-        <div class="privacy-badge">🔒 Your number is private — we will call you, not share your details with anyone.</div>
-        <button class="form-submit" onclick="submitForm('success-business')">Submit — We'll call you within 24 hrs</button>
-        <div class="success-msg" id="success-business">
-          <h4>✅ Registered successfully!</h4>
-          <p>Our team will call you within 24 hours. Please keep your phone available.</p>
-        </div>
-        <p class="form-note">By submitting, you agree to be contacted by our team regarding the IRL program.</p>
+        <p>You own or manage a shop, kitchen, warehouse, construction site, or any commercial space. Earn ₹30,000–₹1 Lakh per week just by letting your team work normally with a small recording device.</p>
+        <p class="gs-note">📞 Fill the form — we call you within 24 hours.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUXnKuFjQ9KENYVYxwi9uvlHcXfZMO-IW0QqFWMPdACwz6xA/viewform?usp=sharing&ouid=110781985776435899237" target="_blank" class="btn-gs blue">Register Your Business →</a>
       </div>
-    </div>
-
-    <!-- FORM 2: REFER -->
-    <div class="form-panel" id="panel-refer">
-      <div class="form-card">
+ 
+      <!-- REFER -->
+      <div class="gs-card refer">
+        <div class="gs-icon">🔗</div>
         <h3>Refer a Business</h3>
-        <p class="form-desc">Know a shop, restaurant, warehouse, or any workplace that could earn from this? Fill this form — we'll reach out to them, and once they qualify, your referral bonus is sent immediately.</p>
-        <div class="form-2col">
-          <div class="form-row">
-            <label>Your Name <span class="required">*</span></label>
-            <input type="text" placeholder="Your full name"/>
-          </div>
-          <div class="form-row">
-            <label>Your WhatsApp Number <span class="required">*</span></label>
-            <input type="tel" placeholder="+91 98765 43210"/>
-          </div>
-        </div>
-        <div class="form-row" style="background:#EEEDFE;border-radius:10px;padding:1rem 1.2rem;border:none;">
-          <p style="font-size:0.82rem;font-weight:700;color:#3C3489;margin-bottom:0.8rem;">Business you're referring</p>
-          <div style="display:flex;flex-direction:column;gap:0.8rem;">
-            <div class="form-row" style="margin:0;">
-              <label>Business Name <span class="required">*</span></label>
-              <input type="text" placeholder="Name of the business"/>
-            </div>
-            <div class="form-row" style="margin:0;">
-              <label>Business Owner / Contact Name</label>
-              <input type="text" placeholder="If you know it"/>
-            </div>
-            <div class="form-row" style="margin:0;">
-              <label>Business Phone Number <span class="required">*</span></label>
-              <input type="tel" placeholder="Their contact number"/>
-            </div>
-            <div class="form-2col">
-              <div class="form-row" style="margin:0;">
-                <label>Business Location <span class="required">*</span></label>
-                <input type="text" placeholder="Area / neighbourhood"/>
-              </div>
-              <div class="form-row" style="margin:0;">
-                <label>Business Category</label>
-                <select>
-                  <option value="">Select if known</option>
-                  <option>Kitchen / Restaurant / Hotel</option>
-                  <option>Construction / Labour work</option>
-                  <option>Automobile / Mechanic / Garage</option>
-                  <option>Tailoring / Garments</option>
-                  <option>Retail / Kirana store</option>
-                  <option>Warehouse / Logistics</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>Approximate number of workers there</label>
-          <input type="number" placeholder="e.g. 8" min="1"/>
-        </div>
-        <div class="form-row">
-          <label>How do you know this business?</label>
-          <textarea placeholder="e.g. My neighbour's restaurant, friend's warehouse — optional"></textarea>
-        </div>
-        <div class="privacy-badge">🔒 Your number stays private. We only contact the referred business — we never reveal who referred them.</div>
-        <button class="form-submit" onclick="submitForm('success-refer')">Submit Referral</button>
-        <div class="success-msg" id="success-refer">
-          <h4>✅ Referral submitted!</h4>
-          <p>We'll reach out to the business. Once they qualify (2 days recording, 3+ workers), your bonus is sent directly to you.</p>
-        </div>
-        <p class="form-note">Referral bonus: ₹500 for 1st, increasing with every referral. Paid immediately on qualification.</p>
+        <p>You don't need to own a business. Just know one? Connect them with us and earn ₹300 to ₹1,000+ per successful referral — with no upper limit on how many you can refer.</p>
+        <p class="gs-note">💸 Bonus paid immediately once the business qualifies.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1M8Pr47vZShjA2JJSUWmDUhsj7sdwxNzQCMYbZ0Qh8nAmXg/viewform?usp=dialog" target="_blank" class="btn-gs purple">Refer Now →</a>
       </div>
-    </div>
-
-    <!-- FORM 3: JOIN -->
-    <div class="form-panel" id="panel-join">
-      <div class="form-card">
+ 
+      <!-- JOIN -->
+      <div class="gs-card join">
+        <div class="gs-icon">💼</div>
         <h3>Work With Us</h3>
-        <p class="form-desc">Interested in joining the IRL team as a Data Captain or Field Officer? Tell us about yourself — we'll get in touch with full role details and next steps.</p>
-        <div class="form-2col">
-          <div class="form-row">
-            <label>Full Name <span class="required">*</span></label>
-            <input type="text" placeholder="Your full name"/>
-          </div>
-          <div class="form-row">
-            <label>WhatsApp Number <span class="required">*</span></label>
-            <input type="tel" placeholder="+91 98765 43210"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>Role You're Interested In <span class="required">*</span></label>
-          <select>
-            <option value="">Select a role</option>
-            <option>Data Captain — manage businesses & field officers, earn up to ₹1L/week</option>
-            <option>Field Officer — stationed at business locations, supervise recording</option>
-            <option>Not sure — tell me more about both</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>Current Area / Location in Bengaluru <span class="required">*</span></label>
-          <input type="text" placeholder="e.g. Whitefield, Jayanagar, Peenya"/>
-        </div>
-        <div class="form-2col">
-          <div class="form-row">
-            <label>Do you have a two-wheeler?</label>
-            <select>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label>Current Availability</label>
-            <select>
-              <option>Full time</option>
-              <option>Part time / weekends</option>
-              <option>Looking to start soon</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>Brief background — what do you currently do?</label>
-          <textarea placeholder="e.g. Sales executive, student, delivery partner — anything is fine"></textarea>
-        </div>
-        <div class="form-row">
-          <label>Languages you speak fluently</label>
-          <input type="text" placeholder="e.g. Kannada, Hindi, English"/>
-        </div>
-        <div class="privacy-badge">🔒 Your details are only used to contact you about this role — never shared externally.</div>
-        <button class="form-submit" onclick="submitForm('success-join')">Submit Application</button>
-        <div class="success-msg" id="success-join">
-          <h4>✅ Application received!</h4>
-          <p>Our hiring team will call you within 48 hours with role details, expectations, and next steps.</p>
-        </div>
-        <p class="form-note">No formal requirements. We value communication skills, self-motivation, and knowledge of Bengaluru areas.</p>
+        <p>Interested in joining as a Data Captain or Field Officer? These are paid roles with strong earning potential. Learn about both roles and apply directly through our hiring forms.</p>
+        <p class="gs-note">🚀 Data Captain earns up to ₹1,01,000/week.</p>
+        <a href="careers.html" class="btn-gs orange">Know More →</a>
       </div>
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section id="faq">
   <div class="section-inner">
@@ -986,42 +610,38 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What exactly is being recorded?</div>
-        <div class="faq-a">Only hand and wrist movements. The device is positioned to capture how hands interact with objects, tools, and surfaces during normal work. No faces, no voices, no background footage.</div>
+        <div class="faq-a">Only hand and wrist movements. The device is positioned to capture how hands interact with objects, tools, and surfaces during normal work. No faces, no voices, no background footage of any kind.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Is this legal? Do we need any permissions?</div>
-        <div class="faq-a">Yes, completely legal. We sign a formal agreement with the business owner before any recording begins. You have full control and can stop at any time. The agreement protects both parties.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Is this legal?</div>
+        <div class="faq-a">Yes, 100% legal. Fully compliant with all applicable laws. You have full control at every stage of the process.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Will work get disrupted?</div>
-        <div class="faq-a">Not at all. Workers wear a small device on their wrist and continue doing exactly what they always do. Our Field Officer is present to manage everything. Most business owners say they forget the recording is even happening.</div>
+        <div class="faq-a">Not at all. Workers wear a small device and continue doing exactly what they always do. Our Field Officer is present to manage everything on the ground. Most business owners say they forget the recording is even happening.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">How and when do we get paid?</div>
-        <div class="faq-a">Payment is calculated based on total device-hours recorded per week and transferred directly to your bank account within 2–3 business days. The more hours recorded, the higher your payout slab.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How long does the recording last?</div>
-        <div class="faq-a">Typically 2–3 days per location. We bring our devices, set up, record for the agreed days, then collect the devices and leave. It's a short, clean engagement with no long-term commitment.</div>
+        <div class="faq-a">Payment is calculated based on total device-hours recorded per week and transferred directly to your bank account. The more hours recorded, the higher your payout slab.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Who is Instawork and can we trust them?</div>
-        <div class="faq-a">Instawork is a US-based company backed by top investors including Benchmark, Y Combinator, Greylock, and Spark Capital. The IRL program is their initiative to collect real-world movement data for robotics research. They are a legitimate, funded company operating globally.</div>
+        <div class="faq-a">Instawork is a US-based company backed by top investors including Benchmark, Y Combinator, Greylock, and Spark Capital. The IRL program is their initiative to collect real-world movement data for robotics research. They are a legitimate, well-funded company operating globally.</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- COMPANY -->
 <section class="company-bg" id="company">
   <div class="section-inner">
     <div class="section-tag">About us</div>
-    <h2 class="section-title">About Instawork & IRL</h2>
+    <h2 class="section-title">About Instawork &amp; IRL</h2>
     <div class="company-grid">
       <div class="company-text">
         <p>Instawork is on a mission to create meaningful economic opportunities for skilled hourly professionals around the globe. Their AI-powered platform connects local businesses with workers at scale.</p>
-        <p>IRL — which stands for In Real Life — is Instawork's answer to a massive challenge in AI: the "100,000-year data gap" identified by UC Berkeley researchers. Robots need to learn from real human work, and that's exactly what this program collects.</p>
-        <p>By deploying skilled workers into real commercial environments — kitchens, warehouses, workshops — IRL captures the high-fidelity data that the world's leading robotics labs use to train foundation models.</p>
+        <p>IRL — In Real Life — is Instawork's answer to a massive challenge in AI: the "100,000-year data gap" identified by UC Berkeley researchers. Robots need to learn from real human work, and that's exactly what this program collects.</p>
+        <p>By deploying workers into real commercial environments — kitchens, warehouses, workshops — IRL captures high-fidelity data that the world's leading robotics labs use to train foundation models.</p>
         <div class="investor-chips">
           <span class="chip">Benchmark</span>
           <span class="chip">Y Combinator</span>
@@ -1042,20 +662,17 @@
         </div>
         <div class="office-row">
           <div class="office-row-icon">📋</div>
-          <p><strong>To get in touch</strong><br>Fill the form above — our team will call you within 24 hours. We prefer form submissions over walk-ins.</p>
+          <p><strong>To get in touch</strong><br>Fill any of the forms above — our team will call you within 24 hours. We prefer form submissions over walk-ins.</p>
         </div>
         <div class="office-row">
           <div class="office-row-icon">🌐</div>
           <p><strong>Website</strong><br>instawork.com</p>
         </div>
-        <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:1rem;margin-top:1rem;border:1px solid rgba(255,255,255,0.1);">
-          <p style="font-size:0.82rem;color:#B5D4F4;line-height:1.6;">Have doubts? Fill the form and mention your question in the comments — our team will address everything on the call.</p>
-        </div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1063,13 +680,13 @@
     <p class="footer-note">© 2025 Instawork Inc. · IRL Data Collection Program · Bengaluru, India</p>
     <div class="footer-links">
       <a href="#how">How it works</a>
-      <a href="#forms">Register</a>
       <a href="#refer">Refer</a>
+      <a href="careers.html">Careers</a>
       <a href="#company">About</a>
     </div>
   </div>
 </footer>
-
+ 
 <script>
 function switchLang(btn, lang) {
   document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
@@ -1079,38 +696,11 @@ function switchLang(btn, lang) {
     if (el) el.style.display = l === lang ? 'block' : 'none';
   });
 }
-
-function switchForm(name, btn) {
-  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('panel-' + name).classList.add('active');
-}
-
-function openForm(name) {
-  const tabs = document.querySelectorAll('.form-tab');
-  const map = { business: 0, refer: 1, join: 2 };
-  if (map[name] !== undefined) {
-    switchForm(name, tabs[map[name]]);
-    setTimeout(() => {
-      document.getElementById('forms').scrollIntoView({ behavior: 'smooth' });
-    }, 50);
-  }
-}
-
-function submitForm(successId) {
-  const msg = document.getElementById(successId);
-  if (msg) {
-    msg.style.display = 'block';
-    msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-}
-
 function toggleFaq(el) {
   el.classList.toggle('open');
-  const answer = el.nextElementSibling;
-  answer.classList.toggle('show');
+  el.nextElementSibling.classList.toggle('show');
 }
 </script>
 </body>
 </html>
+ 
