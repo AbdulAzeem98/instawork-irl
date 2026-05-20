@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Careers — IRL by Instawork</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --blue-dark: #042C53;
+    --blue-mid: #0C447C;
+    --blue: #185FA5;
+    --blue-pale: #B5D4F4;
+    --blue-ghost: #E6F1FB;
+    --amber: #FAC775;
+    --amber-dark: #412402;
+    --orange: #D85A30;
+    --orange-pale: #FDF0EA;
+    --purple: #534AB7;
+    --purple-pale: #EEEDFE;
+    --white: #ffffff;
+    --off-white: #F7F9FC;
+    --gray: #6B7280;
+    --gray-light: #E5EAF0;
+    --text: #0D1B2A;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --green: #166534;
+    --green-pale: #DCFCE7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  h4, h5, button, a.btn { font-family: 'Inter', sans-serif; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 0 2.5rem; height: 66px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-weight: 800; font-size: 1.05rem; color: var(--blue-dark);
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none; letter-spacing: -0.02em;
+  }
+  .nav-logo span {
+    background: var(--blue); color: white;
+    padding: 3px 9px; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 700;
+  }
+  .nav-back {
+    font-size: 0.875rem; color: var(--gray); font-weight: 500;
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--blue); }
+
+  /* HERO */
+  .careers-hero {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 60%, var(--blue) 100%);
+    padding: 130px 2.5rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .careers-hero::before {
+    content: ''; position: absolute; top: -30%; right: -5%;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: rgba(55,138,221,0.15);
+  }
+  .careers-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block; background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;
+    padding: 5px 16px; font-size: 0.75rem; font-weight: 600;
+    color: var(--blue-pale); letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .careers-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 900; color: white; line-height: 1.1; margin-bottom: 1rem;
+  }
+  .careers-hero h1 em { font-style: normal; color: var(--amber); }
+  .careers-hero p {
+    color: rgba(181,212,244,0.88); font-size: 1rem;
+    line-height: 1.75; max-width: 580px; margin-bottom: 2rem;
+  }
+  .hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero-chip {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px; padding: 6px 16px;
+    font-size: 0.8rem; color: white; font-weight: 500;
+  }
+  .hero-chip.gold { background: rgba(250,199,117,0.15); border-color: rgba(250,199,117,0.35); color: var(--amber); }
+
+  /* ROLE SECTION */
+  .role-section { padding: 5rem 2.5rem; }
+  .role-section:nth-child(even) { background: var(--off-white); }
+  .role-inner { max-width: 900px; margin: 0 auto; }
+
+  /* ROLE HEADER */
+  .role-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+    padding-bottom: 2rem; border-bottom: 1px solid var(--gray-light);
+  }
+  .role-title-block {}
+  .role-tag {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.14em; margin-bottom: 0.5rem;
+  }
+  .role-tag.captain { color: var(--blue); }
+  .role-tag.fo { color: var(--orange); }
+  .role-header h2 {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 800; color: var(--blue-dark); line-height: 1.15;
+  }
+  .role-header p { font-size: 0.92rem; color: var(--gray); line-height: 1.7; margin-top: 0.5rem; max-width: 480px; }
+  .pay-box {
+    flex-shrink: 0; border-radius: var(--radius); padding: 1.4rem 1.8rem; text-align: center; min-width: 180px;
+  }
+  .pay-box.blue { background: var(--blue-ghost); border: 1px solid var(--blue-pale); }
+  .pay-box.orange { background: var(--orange-pale); border: 1px solid #F5C0A8; }
+  .pay-box .pay-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .pay-box.blue .pay-label { color: var(--blue-mid); }
+  .pay-box.orange .pay-label { color: var(--orange); }
+  .pay-box .pay-amt { font-size: 1.5rem; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; }
+  .pay-box.blue .pay-amt { color: var(--blue-dark); }
+  .pay-box.orange .pay-amt { color: var(--orange); }
+  .pay-box .pay-sub { font-size: 0.75rem; margin-top: 3px; }
+  .pay-box.blue .pay-sub { color: var(--blue-mid); }
+  .pay-box.orange .pay-sub { color: var(--orange); }
+
+  /* ROLE BODY */
+  .role-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .role-block { }
+  .role-block-title {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gray); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--gray-light);
+    font-family: 'Inter', sans-serif;
+  }
+  .role-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .role-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 0.875rem; color: var(--text); line-height: 1.6;
+  }
+  .role-list li::before {
+    content: '→'; color: var(--blue); font-weight: 700;
+    flex-shrink: 0; margin-top: 1px; font-size: 0.8rem;
+  }
+  .role-list.orange li::before { color: var(--orange); }
+
+  /* COMPENSATION TABLE */
+  .comp-section { margin-bottom: 2.5rem; }
+  .comp-title {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gray); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--gray-light);
+    font-family: 'Inter', sans-serif;
+  }
+  .slab-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 12px; }
+  .slab-card {
+    border-radius: var(--radius-sm); padding: 1rem; text-align: center;
+    border: 1px solid var(--gray-light); background: var(--off-white);
+  }
+  .slab-card.top { background: var(--blue); border-color: var(--blue); }
+  .slab-hrs { font-size: 0.75rem; color: var(--gray); margin-bottom: 4px; font-weight: 500; }
+  .slab-card.top .slab-hrs { color: rgba(255,255,255,0.75); }
+  .slab-pay { font-size: 1.1rem; font-weight: 800; color: var(--blue-dark); font-family: 'Inter', sans-serif; }
+  .slab-card.top .slab-pay { color: var(--amber); }
+  .base-note {
+    background: var(--green-pale); border: 1px solid #BBF7D0;
+    border-radius: var(--radius-sm); padding: 10px 14px;
+    font-size: 0.83rem; color: var(--green); font-weight: 500;
+  }
+  .base-note.orange-note {
+    background: var(--orange-pale); border-color: #F5C0A8; color: var(--orange);
+  }
+
+  /* KPI + SKILLS */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .skills-box {
+    background: var(--off-white); border: 1px solid var(--gray-light);
+    border-radius: var(--radius); padding: 1.5rem;
+  }
+  .skills-box h4 {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gray); margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  .skill-item {
+    display: flex; gap: 8px; align-items: flex-start;
+    font-size: 0.86rem; color: var(--text); line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .skill-item::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .skill-item.orange::before { color: var(--orange); }
+
+  /* APPLY CTA */
+  .apply-cta {
+    border-radius: var(--radius); padding: 2rem 2.2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .apply-cta.blue-cta { background: var(--blue-ghost); border: 1px solid var(--blue-pale); }
+  .apply-cta.orange-cta { background: var(--orange-pale); border: 1px solid #F5C0A8; }
+  .apply-cta h4 { font-size: 1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+  .apply-cta p { font-size: 0.875rem; color: var(--gray); line-height: 1.6; }
+  .btn-apply {
+    flex-shrink: 0; display: inline-block; text-decoration: none;
+    padding: 13px 28px; border-radius: 10px;
+    font-weight: 700; font-size: 0.92rem;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .btn-apply.blue { background: var(--blue); color: white; }
+  .btn-apply.blue:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .btn-apply.orange { background: var(--orange); color: white; }
+  .btn-apply.orange:hover { background: #993C1D; transform: translateY(-1px); }
+
+  /* DIVIDER */
+  .role-divider {
+    max-width: 900px; margin: 0 auto;
+    border: none; border-top: 2px dashed var(--gray-light);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--blue-dark); padding: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo { font-weight: 800; color: white; font-size: 0.98rem; }
+  .footer-note { font-size: 0.78rem; color: var(--blue-pale); }
+  .footer-back { font-size: 0.82rem; color: var(--blue-pale); text-decoration: none; font-weight: 500; }
+  .footer-back:hover { color: white; }
+
+  @media (max-width: 768px) {
+    .role-body, .skills-grid, .slab-grid { grid-template-columns: 1fr; }
+    .role-header { flex-direction: column; }
+    .apply-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html"><span>IRL</span> by Instawork</a>
+  <a class="nav-back" href="index.html">← Back to main site</a>
+</nav>
+
+<!-- HERO -->
+<div class="careers-hero">
+  <div class="careers-hero-inner">
+    <div class="hero-tag">Join the team</div>
+    <h1>Work with us.<br>Earn <em>more</em>.</h1>
+    <p>We're looking for driven, self-motivated people to join the IRL program in Bengaluru. Two roles available — both with strong earning potential and immediate start.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📍 Bengaluru</span>
+      <span class="hero-chip">🚀 Immediate openings</span>
+      <span class="hero-chip gold">💰 Data Captain: up to ₹1,01,000/week</span>
+      <span class="hero-chip">🛵 Two-wheeler preferred</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROLE 1: DATA CAPTAIN -->
+<section class="role-section" id="datacaptain">
+  <div class="role-inner">
+
+    <div class="role-header">
+      <div class="role-title-block">
+        <div class="role-tag captain">Role 01 — Data Captain / Field Sales</div>
+        <h2>Data Captain</h2>
+        <p>The Commercial Data Captain is responsible for onboarding commercial businesses onto the Instawork data collection platform, managing a team of Field Officers, and ensuring maximum recording hours across all active locations. The role combines business development, team management, and operational execution.</p>
+      </div>
+      <div class="pay-box blue">
+        <div class="pay-label">Earn up to</div>
+        <div class="pay-amt">₹1,01,000</div>
+        <div class="pay-sub">per week (incentives)</div>
+      </div>
+    </div>
+
+    <div class="role-body">
+      <div class="role-block">
+        <div class="role-block-title">Key Responsibilities</div>
+        <ul class="role-list">
+          <li>Identify, pitch, and onboard commercial businesses — retail shops, kitchens, construction sites, workshops — for egocentric video data collection</li>
+          <li>Ensure weekly hours targets are met across all onboarded businesses to hit slab bonuses</li>
+          <li>Manage Field Officers stationed at business locations to supervise recording</li>
+          <li>Coordinate device allocation with the office — ensure the right number of devices reach each location</li>
+          <li>Maintain the business pipeline in the tracking sheet</li>
+          <li>Ensure business owners understand the payout structure and are motivated to maximise recording hours per device</li>
+        </ul>
+      </div>
+      <div class="role-block">
+        <div class="role-block-title">Business Development &amp; Onboarding</div>
+        <ul class="role-list">
+          <li>Visit 8–10 commercial businesses daily to pitch the data collection opportunity</li>
+          <li>Deliver the standard pitch clearly and confidently to business owners</li>
+          <li>Handle common objections — what it's for, how long, is it legal, rate negotiation</li>
+          <li>Log every business in the tracking sheet immediately after onboarding</li>
+          <li>Call Field Officers at slow locations — the #1 failure mode is collectors taking breaks</li>
+          <li>Ensure FOs are pushing for 6+ hours per device per day at every location</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-block" style="margin-bottom:2rem;">
+      <div class="role-block-title">Daily Rhythm</div>
+      <ul class="role-list">
+        <li><strong>Morning:</strong> Field visits to new businesses — pitch, log in sheet</li>
+        <li><strong>Afternoon:</strong> Check recording status with FOs, call slow locations, update pipeline sheet, plan next day</li>
+        <li><strong>End of day:</strong> Review total hours across all locations, calculate progress toward weekly slab</li>
+      </ul>
+    </div>
+
+    <div class="comp-section">
+      <div class="comp-title">Compensation</div>
+      <div class="base-note" style="margin-bottom:12px;">
+        💼 Base Salary: <strong>₹25,000/month</strong> (fixed) + Weekly Slab Bonuses
+      </div>
+      <div class="slab-grid">
+        <div class="slab-card">
+          <div class="slab-hrs">400 hrs/week</div>
+          <div class="slab-pay">₹15,200</div>
+        </div>
+        <div class="slab-card">
+          <div class="slab-hrs">600 hrs/week</div>
+          <div class="slab-pay">₹28,500</div>
+        </div>
+        <div class="slab-card">
+          <div class="slab-hrs">800 hrs/week</div>
+          <div class="slab-pay">₹45,600</div>
+        </div>
+        <div class="slab-card top">
+          <div class="slab-hrs">1,000 hrs/week 🏆</div>
+          <div class="slab-pay">₹95,000</div>
+        </div>
+      </div>
+      <div class="base-note">
+        ✨ Only the highest slab achieved pays out each week. Maximum weekly earnings: ~₹1,01,000 (base portion + top slab)
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skills-box">
+        <h4>Skills &amp; Eligibility</h4>
+        <div class="skill-item">Strong communication and persuasion skills — you are selling to business owners daily</div>
+        <div class="skill-item">Ability to manage and motivate a team of Field Officers remotely</div>
+        <div class="skill-item">Comfort with walking into businesses cold and delivering a pitch</div>
+        <div class="skill-item">Basic smartphone and app proficiency</div>
+        <div class="skill-item">Good knowledge of Bengaluru areas</div>
+        <div class="skill-item">Self-driven, target-oriented, and accountable</div>
+        <div class="skill-item">Own smartphone required; two-wheeler preferred</div>
+      </div>
+      <div class="skills-box">
+        <h4>Key Performance Indicators</h4>
+        <div class="skill-item">Weekly hours delivered — total device-hours from all onboarded businesses (drives slab bonus)</div>
+        <div class="skill-item">Businesses onboarded per week — pipeline velocity</div>
+        <div class="skill-item">Business completion rate — percentage finishing their full recording quota</div>
+        <div class="skill-item">FO management — device utilisation and pace at managed locations</div>
+        <div class="skill-item">Pipeline accuracy — sheet updated daily with correct status</div>
+        <div class="skill-item">Escalation speed — issues flagged to IC promptly, not left unresolved</div>
+      </div>
+    </div>
+
+    <div class="apply-cta blue-cta">
+      <div>
+        <h4>Ready to become a Data Captain?</h4>
+        <p>Fill the form — our hiring team will call you within 48 hours with full details and next steps.</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSde_SOT2WpZsOfjO8OJgKXZY1H0ZveKzvlKrG7O3wO6uJyFlQ/viewform?usp=dialog" target="_blank" class="btn-apply blue">Apply as Data Captain →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div style="padding: 0 2.5rem;"><hr class="role-divider"/></div>
+
+<!-- ROLE 2: FIELD OFFICER -->
+<section class="role-section" id="fieldofficer">
+  <div class="role-inner">
+
+    <div class="role-header">
+      <div class="role-title-block">
+        <div class="role-tag fo">Role 02 — Field Officer</div>
+        <h2>Field Officer</h2>
+        <p>The Field Officer is stationed at onboarded business locations to supervise and support the day-to-day recording process. You are the boots on the ground — ensuring devices are running, workers are comfortable, and recording hours are maximised at every location you manage.</p>
+      </div>
+      <div class="pay-box orange">
+        <div class="pay-label">Base Pay</div>
+        <div class="pay-amt">₹30,000</div>
+        <div class="pay-sub">+ ₹6,000 petrol incentive/month</div>
+      </div>
+    </div>
+
+    <div class="role-body">
+      <div class="role-block">
+        <div class="role-block-title">Key Responsibilities</div>
+        <ul class="role-list orange">
+          <li>Be stationed at assigned business locations during recording hours</li>
+          <li>Ensure workers are wearing devices correctly and recording is active at all times</li>
+          <li>Monitor device-hours logged daily and push for 6+ hours per device per day</li>
+          <li>Coordinate with the Data Captain on device logistics — how many devices are needed, when a location finishes, when to move to the next business</li>
+          <li>Escalate any issues — worker breaks, device problems, business owner concerns — to the Data Captain promptly</li>
+          <li>Update recording status and device utilisation in real time</li>
+        </ul>
+      </div>
+      <div class="role-block">
+        <div class="role-block-title">Daily Rhythm</div>
+        <ul class="role-list orange">
+          <li><strong>Morning:</strong> Arrive at assigned business location, set up devices, brief workers</li>
+          <li><strong>During the day:</strong> Monitor recording, keep workers motivated, ensure no unnecessary breaks</li>
+          <li><strong>Afternoon:</strong> Update Data Captain on hours logged, flag slow locations immediately</li>
+          <li><strong>End of day:</strong> Collect devices, confirm hours, report to Data Captain for next day planning</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-section">
+      <div class="comp-title">Compensation</div>
+      <div class="base-note orange-note">
+        💼 Base Salary: <strong>₹30,000/month</strong> (fixed) + <strong>₹6,000/month</strong> petrol incentive = <strong>₹36,000/month guaranteed</strong>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skills-box">
+        <h4>Skills &amp; Eligibility</h4>
+        <div class="skill-item orange">Strong communication skills — you work directly with business owners and their workers daily</div>
+        <div class="skill-item orange">Ability to keep workers motivated and on track throughout the day</div>
+        <div class="skill-item orange">Comfortable spending full days at business locations</div>
+        <div class="skill-item orange">Basic smartphone and app proficiency</div>
+        <div class="skill-item orange">Good knowledge of Bengaluru areas</div>
+        <div class="skill-item orange">Self-driven, punctual, and reliable</div>
+        <div class="skill-item orange">Own smartphone required; two-wheeler preferred</div>
+      </div>
+      <div class="skills-box">
+        <h4>Key Performance Indicators</h4>
+        <div class="skill-item orange">Daily device-hours logged at your assigned locations</div>
+        <div class="skill-item orange">Average hours per device per day (target: 6+ hours)</div>
+        <div class="skill-item orange">Worker participation rate — all assigned workers recording</div>
+        <div class="skill-item orange">Device utilisation — no idle devices during working hours</div>
+        <div class="skill-item orange">Issue escalation speed — problems reported to Data Captain immediately</div>
+        <div class="skill-item orange">Attendance and punctuality at assigned locations</div>
+      </div>
+    </div>
+
+    <div class="apply-cta orange-cta">
+      <div>
+        <h4>Ready to become a Field Officer?</h4>
+        <p>Fill the form — our hiring team will call you within 48 hours with full details and next steps.</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7PKfexRphIV3VSZVZlWxzILnIHJ8vXaasa67DfmI9A6OrAQ/viewform?usp=dialog" target="_blank" class="btn-apply orange">Apply as Field Officer →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">IRL by Instawork</div>
+    <p class="footer-note">© 2025 Instawork Inc. · IRL Data Collection Program · Bengaluru, India</p>
+    <a href="index.html" class="footer-back">← Back to main site</a>
+  </div>
+</footer>
+
+</body>
+</html>
